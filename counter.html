@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .bg-container{
+            height:100vh;
+            background-color: #f1f5f8;
+
+        }
+        .counter-heading{
+            font-size: 50px;
+            font-family: "Roboto";
+            font-weight: 800;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div  id="textCenter" class="bg-container text-center d-flex flex-column justify-content-center">
+        <h1 class="counter-heading">Counter</h1>
+        <p id="counterValue" class="counter-value">0</p>
+        <button class="button" onclick="onDecrement()">Decrement</button>
+        <button class="button" onclick="onReset()">Reset</button>
+        <button class="button" onclick="onIncrement()">Increment</button>
+
+        
+    </div>
+    <script>
+        document.getElementById("textCenter").style.textAlign="center";
+        document.getElementById("textCenter").style.backgroundColor="pink";
+        document.getElementById("textCenter").style.width="400px";
+        document.getElementById("textCenter").style.margin="auto";
+        document.getElementById("textCenter").style.marginBottom="150px";
+        document.getElementById("textCenter").style.height="400px";
+        document.getElementById("textCenter").style.borderWidth="10px";
+        document.getElementById("textCenter").style.borderStyle="solid";
+        document.getElementById("textCenter").style.borderColor="black";
+
+        /*--for function Increment--*/
+        
+        let counterElement=document.getElementById("counterValue");
+
+        function onIncrement(){
+            let previousCounterValue=counterElement.textContent;
+            let updatedCounterValue=parseInt(previousCounterValue)+1;
+            if (updatedCounterValue > 0) {
+                counterElement.style.color = "green";
+            }
+            else if (updatedCounterValue < 0) {
+                counterElement.style.color = "red";
+            }
+            else {
+                counterElement.style.color = "black";
+            }
+            counterElement.textContent = updatedCounterValue;
+            counterElement.style.fontSize = "70px";
+        }
+        /*---for Decrement--*/
+        function onDecrement() {
+            let previousCounterValue = counterElement.textContent;
+            let updatedCounterValue = parseInt(previousCounterValue) - 1;
+            if (updatedCounterValue > 0) {
+                counterElement.style.color = "green";
+            }
+            else if (updatedCounterValue < 0) {
+                counterElement.style.color = "red";
+            }
+            else {
+                counterElement.style.color = "black";
+            }
+            counterElement.textContent = updatedCounterValue;
+            counterElement.style.fontSize = "30px";
+        
+        }
+        /*---for RESET----*/
+        function onReset() {
+            
+          
+            counterElement.textContent = 0;
+            counterElement.style.color = "black";
+            counterElement.style.fontSize = "50px";
+        }
+    
+
+    </script>
+</body>
+</html>
